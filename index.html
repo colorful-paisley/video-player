@@ -11,21 +11,22 @@
   <script src="https://cdn.jsdelivr.net/npm/video.js@8.10.0/dist/video.min.js"></script>
 
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      background: transparent !important;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
     .video-container {
       width: 90%;
       max-width: 960px;
       aspect-ratio: 16 / 9;
-      margin: 40px auto;
       border-radius: 16px;
       overflow: hidden;
-      background: transparent;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     }
 
     .video-js {
@@ -35,8 +36,16 @@
       object-fit: cover;
     }
 
+    .video-js .vjs-control-bar {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .video-js .vjs-control {
+      color: white !important;
+    }
+
     .video-js .vjs-load-progress {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(200, 200, 200, 0.5);
       background-image: none !important;
     }
   </style>
