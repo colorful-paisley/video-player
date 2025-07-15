@@ -3,21 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learning Management System</title>
+  <title>Video Player – learn.mp4</title>
 
-  <!-- Video.js + motyw Sea -->
+  <!-- Video.js + SEA theme -->
   <link href="https://cdn.jsdelivr.net/npm/video.js@8.10.0/dist/video-js.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/@videojs/themes@1/dist/sea/index.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/video.js@8.10.0/dist/video.min.js"></script>
 
   <style>
-    body {
+    html, body {
       margin: 0;
-      background: transparent;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      transition: background-color 0.3s ease;
+    }
+
+    /* domyślnie: jasny motyw */
+    body {
+      background-color: #ffffff;
+    }
+
+    /* ciemny motyw */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+      }
+
+      .video-js .vjs-control-bar {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .video-js .vjs-control {
+        color: #eee !important;
+      }
     }
 
     .video-container {
@@ -36,15 +61,6 @@
       object-fit: cover;
     }
 
-    /* Pasek odtwarzania */
-    .video-js .vjs-control-bar {
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .video-js .vjs-control {
-      color: white !important;
-    }
-
     .video-js .vjs-load-progress {
       background-color: rgba(200, 200, 200, 0.5);
       background-image: none !important;
@@ -61,7 +77,7 @@
       preload="auto"
       data-setup="{}"
     >
-<source src="Learn.mp4" type="video/mp4" />
+      <source src="Learn.mp4" type="video/mp4" />
       <p class="vjs-no-js">
         Aby obejrzeć to wideo, włącz JavaScript lub użyj nowoczesnej przeglądarki.
       </p>
